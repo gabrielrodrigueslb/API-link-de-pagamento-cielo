@@ -32,7 +32,7 @@ export async function criarLink(
   if (!chatId) throw new Error('ChatId não enviado');
   if (parcelas > 12) throw new Error('Máximo de parcelas é 12');
 
-  const orderNumber = `${chatId}-${Date.now()}`;
+  const orderNumber = `${chatId}${Date.now()}`;
   const valorCentavos = Math.round(parseNumber(`${valor}`) * 100);
   const expiresAt = dataMais30Dias();
 
